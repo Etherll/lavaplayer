@@ -139,15 +139,15 @@ class ConnectionInfo:
     guild_id: int
     session_id: str
     channel_id: t.Optional[int]
-    
-    
+
+
 @dataclass(init=True)
 class Filters:
     """
     All the filters are optional, and leaving them out of this message will disable them.
 
     Adding a filter can have adverse effects on performance. These filters force Lavaplayer to decode all audio to PCM, even if the input was already in the Opus format that Discord uses. This means decoding and encoding audio that would normally require very little processing. This is often the case with YouTube videos.
-    
+
     Parameters
     ---------
     volume: :class:`int` | :class:`float`
@@ -155,7 +155,7 @@ class Filters:
     """
     def __init__(self, volume: t.Union[int, float] = 1.0) -> None:
         self._payload: dict = {"op": "filters", "volume": volume}
-    
+
     def equalizer(self, band: t.Union[int, float], gain: t.Union[int, float]):
         """
         There are 15 bands (0-14) that can be changed.
@@ -165,32 +165,32 @@ class Filters:
         also change the volume of the output.
         """
         self._payload["equalizer"] = [{"band": band, "gain": gain}]
-    
+
     def karaoke(self, level: t.Union[int, float], mono_level: t.Union[int, float], filter_band: t.Union[int, float], filter_width: t.Union[int, float]):
         """
         Uses equalization to eliminate part of a band, usually targeting vocals.
         """
         self._payload["karaoke"] = {"level": level, "monoLevel": mono_level, "filterBand": filter_band, "filterWidth": filter_width}
-    
+
     def timescale(self, speed: t.Union[int, float], pitch: t.Union[int, float], rate: t.Union[int, float]):
         """
         Changes the speed, pitch, and rate. All default to 1.
         """
         self._payload["timescale"] = {"speed": speed, "pitch": pitch, "rate": rate}
-    
+
     def tremolo(self, frequency: t.Union[int, float], depth: t.Union[int, float]):
         """
         Uses amplification to create a shuddering effect, where the volume quickly oscillates.
         Example: https://en.wikipedia.org/wiki/File:Fuse_Electronics_Tremolo_MK-III_Quick_Demo.ogv
         """
         self._payload["tremolo"] = {"frequency": frequency, "depth": depth}
-    
+
     def vibrato(self, frequency: t.Union[int, float], depth: t.Union[int, float]):
         """
         Similar to tremolo. While tremolo oscillates the volume, vibrato oscillates the pitch.
         """
         self._payload["vibrato"] = {"frequency": frequency, "depth": depth}
-    
+
     def rotation(self, rotation_hz: t.Union[int, float]):
         """
         Rotates the sound around the stereo channels/user headphones aka Audio Panning.

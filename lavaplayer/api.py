@@ -22,7 +22,7 @@ class Api:
             "Host": f"{host}:{port}",
             "Authorization": password
         }
-    
+
     async def request(self, method: str, rout: str, data: dict = {}) -> dict:
         """
         This function makes a request to the rest api for lavalink

@@ -41,7 +41,7 @@ async def on_message(message: tinycord.Message):
             description=f"done join to <#{message.author.voice_state.channel_id}>"
         )
         await message.channel.send(embeds=[embed])
-    
+
     if message.content == '!leave':
         if message.guild.me.voice_state == None:
             return
@@ -125,7 +125,7 @@ async def on_message(message: tinycord.Message):
             embed = tinycord.Embed(
                 description=f"volume choose to {vol}%"
             )
-            
+
             await message.channel.send(embeds=[embed])
 
     if message.content.startswith('!seek'):
@@ -158,6 +158,6 @@ async def on_message(message: tinycord.Message):
         )
 
         await message.channel.send(embeds=[embed])
-    
+
 lavalink.connect()
 client.connect()

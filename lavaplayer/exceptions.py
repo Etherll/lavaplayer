@@ -2,7 +2,7 @@
 class NodeError(Exception):
     """
     A error for node.
-    
+
     Parameters
     ----------
     message: :class:`str`
@@ -20,7 +20,7 @@ class NodeError(Exception):
         A error message.
         """
         return self._message
-    
+
     @property
     def guild_id(self):
         """
@@ -32,7 +32,7 @@ class NodeError(Exception):
 class VolumeError(Exception):
     """
     A error for volume range if not in 0 to 1000.
-    
+
     Parameters
     ----------
     message: :class:`str`
@@ -62,7 +62,7 @@ class VolumeError(Exception):
 class NotConnectedError(Exception):
     """
     A error for not connected.
-    
+
     Parameters
     ----------
     message: :class:`str`
