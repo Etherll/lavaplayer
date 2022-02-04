@@ -61,7 +61,8 @@ class LavalinkClient:
         self._nodes: dict[int, Track] = {}
         self._voice_handlers: dict[int, ConnectionInfo] = {}
 
-    def _prossing_tracks(self, tracks: list) -> t.List[Track]:
+    @staticmethod
+    def _prossing_tracks(tracks: list) -> t.List[Track]:
         _tracks = []
         for track in tracks:
             info = track["info"]
