@@ -16,7 +16,7 @@ lavalink = lavaplayer.LavalinkClient(
     password="youshallnotpass",  # Lavalink password
     bot_id=123  # Lavalink bot id
 )
- 
+
 
 @lavalink.listen(lavaplayer.TrackStartEvent)
 async def track_start_event(event: lavaplayer.TrackStartEvent):

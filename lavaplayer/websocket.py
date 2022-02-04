@@ -35,7 +35,7 @@ class WS:
         self._loop = client._loop
         self.emitter: Emitter = client.event_manager
         self.is_connect: bool = False
-    
+
     async def _connect(self):
         async with aiohttp.ClientSession(headers=self._headers, loop=self._loop) as session:
             self.client.session = session

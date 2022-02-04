@@ -17,7 +17,7 @@ class Emitter:
     def __init__(self, loop: asyncio.AbstractEventLoop) -> None:
         self._loop = loop
         self.listeners = deque()
-    
+
     def add_listener(self, event: t.Union[str, Event], func: t.Callable):
         """
         Add listener for listeners list.

@@ -243,7 +243,7 @@ class LavalinkClient:
             user id for requester the play track
         start: :class:`bool`
             force play queue is ignored
-        
+
         Raises
         --------
         :exc:`.NodeError`
@@ -279,7 +279,7 @@ class LavalinkClient:
             guild id for server
         filters: :class:`Filters`
             add filters to the track
-        
+
         Raises
         --------
         :exc:`.NodeError`
@@ -299,7 +299,7 @@ class LavalinkClient:
         ---------
         guild_id: :class:`int`
             guild id for server
-        
+
         Raises
         --------
         :exc:`.NodeError`
@@ -457,7 +457,7 @@ class LavalinkClient:
         ---------
         guild_id: :class:`int`
             guild id for server
-        
+
         Raises
         --------
         :exc:`.NodeError`
@@ -478,7 +478,7 @@ class LavalinkClient:
     async def raw_voice_state_update(self, guild_id: int, /, user_id: int, session_id: str, channel_id: t.Optional[int]) -> None:
         """
         A voice state update has been received from Discord.
-        
+
         Parameters
         ---------
         guild_id: :class:`int`
@@ -500,7 +500,7 @@ class LavalinkClient:
     async def raw_voice_server_update(self, guild_id: int, /, endpoint: str, token: str) -> None:
         """
         A voice server update has been received from Discord.
-        
+
         Parameters
         ---------
         guild_id: :class:`int`
