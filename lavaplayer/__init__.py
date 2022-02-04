@@ -9,8 +9,5 @@ __title__ = "lavaplayer"
 __author__ = "HazemMeqdad"
 __license__ = "MIT"
 __version__ = "1.0.5a"
-
-from .client import LavalinkClient
 from .objects import *
-from .api import Api
 from .exceptions import *
