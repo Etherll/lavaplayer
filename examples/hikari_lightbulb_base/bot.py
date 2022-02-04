@@ -3,7 +3,6 @@ import hikari
 import lavaplayer
 import logging
 import os
-import asyncio
 
 SLASH_COMMAND = True  # if you want to use slash command, set True
 PREFIX = ","  # prefix for commands
